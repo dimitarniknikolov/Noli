@@ -17,6 +17,10 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -26,10 +30,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile "com.google.code.gson:gson:$gson_version"
     implementation "com.android.support:appcompat-v7:$support_version"
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation "com.google.android.gms:play-services-auth:$gms_version"
     implementation "android.arch.lifecycle:extensions:$arch_version"
+    implementation "com.google.firebase:firebase-database:$gms_version"
     annotationProcessor "android.arch.lifecycle:compiler:$arch_version"
 
     //Dependency Injection
@@ -43,3 +49,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+
+apply plugin: 'com.google.gms.google-services'
