@@ -15,7 +15,7 @@ import java.util.Observable;
 public class Note extends Observable {
 
     @SerializedName("id")
-    public int id;
+    public String id;
     @SerializedName("title")
     public String title;
     @SerializedName("description")
@@ -25,7 +25,7 @@ public class Note extends Observable {
     public Note() {
     }
 
-    public Note(int id, String title, String description) {
+    public Note(String id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
